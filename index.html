@@ -399,11 +399,25 @@
     <script>
         new WOW().init();
     </script>
-        <script>
-            document.addEventListener("context menu", function(perweb){
-                perweb.preventDefault();
-            });
-        </script>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e){
+            if(e.keyCode == 123){
+                alert("Disabled");
+                return false;
+            }
+
+            if(e.ctrlKey && e.keyCode == 67){
+                alert("Disabled");
+                return false;
+            }
+
+            if(e.ctrlKey && e.keyCode == 85){
+                alert("Disabled");
+                return false;
+            }
+        }
+    </script>
 </body>
 
 </html>
